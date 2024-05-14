@@ -1,5 +1,5 @@
 // Fungsi untuk mencatat pembelian
-void catatPembelian(Barang daftarPembelian[], int jumlahPembelian) {
+void MencatatPembelian(Barang daftarPembelian[], int jumlahPembelian) {
     FILE *pembelianFile = fopen("pembelian.txt", "a");
     if (pembelianFile == NULL) {
         printf("Gagal membuka file pembelian.txt.\n");
