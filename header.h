@@ -22,7 +22,7 @@ void MenampilkanBarang(Barang daftarBarang[], int jumlahBarang);
 void MembeliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian);
 void MenampilkanPembelian(Barang daftarPembelian[], int jumlahPembelian);
 double MenghitungTotalPembayaran(Barang daftarPembelian[], int jumlahPembelian);
-int login(Login loginInfo[], int *jumlahLogin);
+int login(Login InformasiLogin[], int *jumlahLogin);
 void MengcatatPembelian(Barang daftarPembelian[], int jumlahPembelian);
 
 #endif /* FUNCTIONS_H */
