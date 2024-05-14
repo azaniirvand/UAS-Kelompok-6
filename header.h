@@ -16,7 +16,7 @@ typedef struct {
     char password[50];
 } Login;
 
-void TenambahBarang(Barang daftarBarang[], int *jumlahBarang);
+void MenambahBarang(Barang daftarBarang[], int *jumlahBarang);
 void MengurangiBarang(Barang daftarBarang[], int jumlahBarang);
 void MenampilkanBarang(Barang daftarBarang[], int jumlahBarang);
 void MembeliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian);
