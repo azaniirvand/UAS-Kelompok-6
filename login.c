@@ -8,6 +8,7 @@ int login(Login loginInfo[], int *jumlahLogin) {
     scanf(" %s", username);
     printf("Masukkan password: ");
     scanf("%s", password);
+    
     for (int i = 0; i < *jumlahLogin; i++) {
         if (strcmp(username, loginInfo[i].username) == 0 && strcmp(password, loginInfo[i].password) == 0)
             return 1;
