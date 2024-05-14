@@ -1,6 +1,6 @@
 #include "header.h"
 
-void beliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian) {
+void MembeliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian) {
     tampilkanBarang(daftarBarang, jumlahBarang);
 
     int pilihan;
