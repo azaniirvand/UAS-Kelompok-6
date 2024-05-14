@@ -1,7 +1,7 @@
 #include "header.h"
 
 // Fungsi untuk menambahkan barang
-void tambahBarang(Barang daftarBarang[], int *jumlahBarang) {
+void MenambahBarang(Barang daftarBarang[], int *jumlahBarang) {
     printf("Masukkan nama barang: ");
     scanf(" %[^\n]", daftarBarang[*jumlahBarang].nama); // %[^\n] digunakan untuk membaca string dengan spasi
     printf("Masukkan jumlah barang: ");
