@@ -1,7 +1,7 @@
 #include "header.h"
 
 // Fungsi untuk mengurangi jumlah barang
-void kurangiBarang(Barang daftarBarang[], int jumlahBarang) {
+void MengurangiBarang(Barang daftarBarang[], int jumlahBarang) {
     tampilkanBarang(daftarBarang, jumlahBarang);
 
     int pilihan, jumlahKurang;
