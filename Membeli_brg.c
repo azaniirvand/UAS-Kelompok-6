@@ -1,7 +1,7 @@
 #include "header.h"
 
 void MembeliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian) {
-    tampilkanBarang(daftarBarang, jumlahBarang);
+    MenampilkanBarang(daftarBarang, jumlahBarang);
 
     int pilihan;
     printf("Pilih barang yang ingin dibeli (nomor): ");

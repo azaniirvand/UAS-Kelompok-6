@@ -2,7 +2,7 @@
 #include <string.h>
 #include "header.h"
 // Fungsi untuk login
-int login(InformasiLogin[], int *jumlahLogin) {
+int login(Login InformasiLogin[], int *jumlahLogin) {
     char username[50], password[50];
     printf("Masukkan username: ");
     scanf(" %s", username);

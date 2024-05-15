@@ -2,7 +2,7 @@
 
 // Fungsi untuk mengurangi jumlah barang
 void MengurangiBarang(Barang daftarBarang[], int jumlahBarang) {
-    tampilkanBarang(daftarBarang, jumlahBarang);
+    MenampilkanBarang(daftarBarang, jumlahBarang);
 
     int pilihan, jumlahKurang;
     printf("Pilih barang yang ingin dikurangi jumlahnya (nomor): ");

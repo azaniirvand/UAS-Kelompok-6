@@ -25,3 +25,4 @@ double MenghitungTotalPembayaran(Barang daftarPembelian[], int jumlahPembelian);
 int login(Login InformasiLogin[], int *jumlahLogin);
 void MengcatatPembelian(Barang daftarPembelian[], int jumlahPembelian);
 
+#endif

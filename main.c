@@ -1,11 +1,16 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "header.h"
-#include "fungsi.c"
+#include "login.c"
+#include "mengurangi_brg.c"
+#include "Membeli_brg.c"
+#include "MenampilkanBarang.c"
 
 int main() {
     Barang daftarBarang[MAX_BARANG];
     Barang daftarPembelian[MAX_BARANG];
-    Login loginInfo[MAX_LOGIN];
+    Login InformasiLogin[MAX_LOGIN];
     int jumlahBarang = 0;
     int jumlahLogin = 0;
     int jumlahPembelian = 0;
@@ -21,66 +26,61 @@ int main() {
 
     FILE *loginFile = fopen("login.txt", "r");
     if (loginFile != NULL) {
-        while (fscanf(loginFile, "%s %s", loginInfo[jumlahLogin].username, loginInfo[jumlahLogin].password) != EOF) {
+        while (fscanf(loginFile, "%s %s", InformasiLogin[jumlahLogin].username, InformasiLogin[jumlahLogin].password) != EOF) {
             jumlahLogin++;
         }
         fclose(loginFile);
     }
 
-    int choice;
-    while (1) { 
-        printf("silahkan Login\n");
-        isLoggedIn = login(loginInfo, &jumlahLogin);
-                if (isLoggedIn){               
-                    printf("Login berhasil!\n");
-                    printf("\nMenu:\n");
-                    printf("1. Tambah Barang\n");
-                    printf("2. Lihat Daftar Barang\n");
-                    printf("3. Beli Barang\n");
-                    printf("4. Lihat Pembelian\n");
-                    printf("5. Melakukan Pembayaran\n");
-                    printf("6. Keluar\n");
-                    printf("Pilihan Anda: ");
-                    scanf("%d", &choice);
-                }else
-                    printf("Login gagal. Coba lagi.\n");
-        
+    //Lakukan login csebelum masuk ke menu
+    while (!isLoggedIn) {
+        printf("Silahkan Login\n");
+        isLoggedIn = login(InformasiLogin, &jumlahLogin);
+        if (!isLoggedIn) {
+            printf("Login gagal. Coba lagi.\n");
+        } else {
+            printf("Login berhasil!\n");
+        }
+    }
 
-        switch(choice) {
+    // Menu loop
+    int pilihan;
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Tambah Barang\n");
+        printf("2. Tampilkan Barang\n");
+        printf("3. Beli Barang\n");
+        printf("4. Tampilkan Pembelian\n");
+        printf("5. Hitung Total Pembayaran\n");
+        printf("6. Kurangi Jumlah Barang\n");
+        printf("7. Catat Pembelian\n");
+        printf("8. Keluar\n");
+        printf("Pilihan: ");
+        scanf("%d", &pilihan);
+
+        switch (pilihan) {
             case 1:
-                if (isLoggedIn)
-                    tambahBarang(daftarBarang, &jumlahBarang);
-                else
-                    printf("Login terlebih dahulu!\n");
+                MenambahBarang(daftarBarang, &jumlahBarang);
                 break;
             case 2:
-                if (isLoggedIn)
-                    tampilkanBarang(daftarBarang, jumlahBarang);
-                else
-                    printf("Login terlebih dahulu!\n");
+                MenampilkanBarang(daftarBarang, jumlahBarang);
                 break;
             case 3:
-                if (isLoggedIn)
-                    beliBarang(daftarBarang, jumlahBarang, daftarPembelian, &jumlahPembelian);
-                else
-                    printf("Login terlebih dahulu!\n");
+                MembeliBarang(daftarBarang, jumlahBarang, daftarPembelian, &jumlahPembelian);
+                break;
+            case 4:
+                MenampilkanPembelian(daftarPembelian, jumlahPembelian);
                 break;
             case 5:
-                if (isLoggedIn)
-                    tampilkanPembelian(daftarPembelian, jumlahPembelian);
-                else
-                    printf("Login terlebih dahulu!\n");
+                printf("Total Pembayaran: %.2f\n", MenghitungTotalPembayaran(daftarPembelian, jumlahPembelian));
                 break;
             case 6:
-                if (isLoggedIn) {
-                    catatPembelian(daftarPembelian, jumlahPembelian);
-                    double total = hitungTotalPembayaran(daftarPembelian, jumlahPembelian);
-                    printf("Total pembayaran: %.2f\n", total);
-                } else {
-                    printf("Login terlebih dahulu!\n");
-                }
+                MengurangiBarang(daftarBarang, jumlahBarang);
                 break;
             case 7:
+                MengcatatPembelian(daftarPembelian, jumlahPembelian);
+                break;
+            case 8:
                 // Simpan perubahan ke file
                 barangFile = fopen("daftar_barang.txt", "w");
                 for (int i = 0; i < jumlahBarang; i++) {
@@ -88,8 +88,9 @@ int main() {
                 }
                 fclose(barangFile);
                 exit(0);
+                break;
             default:
-                printf("Pilihan tidak valid!\n");
+                printf("Pilihan tidak valid.\n");
         }
     }
 
