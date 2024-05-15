@@ -16,12 +16,13 @@ typedef struct {
     char password[50];
 } Login;
 
-void tambahBarang(Barang daftarBarang[], int *jumlahBarang);
-void tampilkanBarang(Barang daftarBarang[], int jumlahBarang);
-void beliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian);
-void tampilkanPembelian(Barang daftarPembelian[], int jumlahPembelian);
-double hitungTotalPembayaran(Barang daftarPembelian[], int jumlahPembelian);
-int login(Login loginInfo[], int *jumlahLogin);
-void catatPembelian(Barang daftarPembelian[], int jumlahPembelian);
+void MenambahBarang(Barang daftarBarang[], int *jumlahBarang);
+void MengurangiBarang(Barang daftarBarang[], int jumlahBarang);
+void MenampilkanBarang(Barang daftarBarang[], int jumlahBarang);
+void MembeliBarang(Barang daftarBarang[], int jumlahBarang, Barang daftarPembelian[], int *jumlahPembelian);
+void MenampilkanPembelian(Barang daftarPembelian[], int jumlahPembelian);
+double MenghitungTotalPembayaran(Barang daftarPembelian[], int jumlahPembelian);
+int login(Login InformasiLogin[], int *jumlahLogin);
+void MengcatatPembelian(Barang daftarPembelian[], int jumlahPembelian);
 
 #endif /* FUNCTIONS_H */
