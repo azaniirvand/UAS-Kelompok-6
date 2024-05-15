@@ -50,15 +50,17 @@ int main() {
     // Menu loop
     int pilihan;
     while (1) {
-        printf("\nMenu:\n");
-        printf("1. Tambah Barang\n");
-        printf("2. Tampilkan Barang\n");
-        printf("3. Beli Barang\n");
-        printf("4. Tampilkan Pembelian\n");
-        printf("5. Hitung Total Pembayaran\n");
-        printf("6. Kurangi Jumlah Barang\n");
-        printf("7. Catat Pembelian\n");
-        printf("8. Keluar\n");
+        printf("\n=== Menu ===\n");
+        printf("No  |  Menu\n");
+        printf("----|---------------------------\n");
+        printf("1   |  Tambah Barang\n");
+        printf("2   |  Tampilkan Barang\n");
+        printf("3   |  Beli Barang\n");
+        printf("4   |  Tampilkan Pembelian\n");
+        printf("5   |  Hitung Total Pembayaran\n");
+        printf("6   |  Kurangi Jumlah Barang\n");
+        printf("7   |  Catat Pembelian\n");
+        printf("8   |  Keluar\n");
         printf("Pilihan: ");
         scanf("%d", &pilihan);
 
