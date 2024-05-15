@@ -3,9 +3,13 @@
 #include <string.h>
 #include "header.h"
 #include "login.c"
-#include "mengurangi_brg.c"
-#include "Membeli_brg.c"
+#include "MenambahBarang.c"
+#include "MengurangiBarang.c"
+#include "MembeliBarang.c"
 #include "MenampilkanBarang.c"
+#include "MenampilkanPembelian.c"
+#include "MenghitungTotalPembayaran.c"
+#include "MengcatatPembelian.c"
 
 int main() {
     Barang daftarBarang[MAX_BARANG];

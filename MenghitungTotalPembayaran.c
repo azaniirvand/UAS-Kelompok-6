@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "header.h"
+
 // Fungsi untuk menghitung total pembayaran
 double MenghitungTotalPembayaran(Barang daftarPembelian[], int jumlahPembelian) {
     double total = 0;
