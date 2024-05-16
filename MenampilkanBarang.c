@@ -1,5 +1,6 @@
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 #include "header.h"
 // Fungsi untuk menampilkan daftar barang
 void MenampilkanBarang(Barang daftarBarang[], int jumlahBarang) {
